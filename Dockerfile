@@ -1,7 +1,15 @@
 FROM ubuntu:bionic
-
+WORKDIR /workbench
 RUN apt-get update && apt-get install -y wget git vim
-
+COPY assets assets
+RUN cat assets/bashrc >> ~/.bashrc; \
+    cp assets/vimrc ~/.vimrc; \
+    git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell; \
+    git clone git://github.com/chriskempson/base16-vim.git base16; \
+    mkdir -p ~/.vim/colors; \
+    cp base16/colors/*.vim ~/.vim/colors; \
+    rm -rf assets; \
+    rm -rf base16;
 RUN set -eux; \
     go_version=1.14.4; \
     go_os=linux; \
