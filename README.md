@@ -26,4 +26,5 @@ base16_zenburn
 ## Dependencies
 
 [Base16](https://github.com/chriskempson/base16)
+
 [vim-go](https://github.com/fatih/vim-go)
