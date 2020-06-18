@@ -4,8 +4,9 @@ Development environment in a container.
 
 Check out [Docker Hub](https://hub.docker.com/r/alexghiu/workbench) for available tags.
 
-[![Docker pulls](https://img.shields.io/docker/pulls/alexghiu/workbench.svg)]()
-[![Docker build](https://img.shields.io/docker/build/alexghiu/workbench.svg)]()
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/alexghiu/workbench.svg)](https://hub.docker.com/r/alexghiu/workbench)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alexghiu/workbench.svg)](https://hub.docker.com/r/alexghiu/workbench)
+[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/alexghiu/workbench.svg?sort=semver)](https://hub.docker.com/r/alexghiu/workbench)
 
 ## Usage
 
