@@ -23,8 +23,14 @@ base16_apathy
 base16_zenburn
 ```
 
-## Dependencies
+## Includes
 
 [Base16](https://github.com/chriskempson/base16)
 
+[Go](https://golang.org)
+
 [vim-go](https://github.com/fatih/vim-go)
+
+[Flutter](https://flutter.dev)
+
+
