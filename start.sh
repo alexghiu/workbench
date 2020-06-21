@@ -10,4 +10,4 @@ docker container run --interactive --detach --privileged \
   \
   --mount type=bind,source="$HOME/Work/learn",target="/learn" \
   \
-  workbench
+  alexghiu/workbench:latest
