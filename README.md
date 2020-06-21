@@ -23,6 +23,62 @@ base16_apathy
 base16_zenburn
 ```
 
+# Bootstrap Flutter & Android Studio
+
+Start the container:
+
+```sh
+./start.sh
+```
+
+Get a shell in the container:
+
+```sh
+# Get the container id
+docker container ls -a
+
+docker container exec -it [container-id] /bin/bash
+```
+
+Inside the container:
+
+```sh
+# Get an initial status of flutter dependencies
+flutter doctor
+
+# Accept Android Licenses
+flutter doctor --android-licenses
+
+# Setup Android Studio
+studio.sh
+
+# When Android Studio starts:
+# 1. Do the initial "standard setup"
+# 2. Intall "Flutter" (will also install "Dart") plugins
+# 3. Configure an AVD Manager
+#    Personal "Recommended" config
+#       Device: Pixel 2
+#       System image:
+#          Release: "Oreo"
+#          API Level: 26
+#          Target: Android 8.0
+
+# Check that AVD against Flutter:
+flutter emulators
+# The output should contain the freshly configured AVD.
+
+# Start the emulator:
+flutter emulators --launch Pixel_2_API_26
+
+# Check that the emulated device against Flutter:
+flutter devices
+# List should contain the running emulated device.
+
+# Run the app in the emulator
+cd [app path in container]
+flutter run --enable-software-rendering
+```
+
 ## Includes
 
 [Base16](https://github.com/chriskempson/base16)
