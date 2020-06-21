@@ -32,7 +32,6 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 #
 # To be able to correctly install the android-command-line-tools I used:
 # https://stackoverflow.com/questions/60440509/android-command-line-tools-sdkmanager-always-shows-warning-could-not-create-se
-#
 RUN echo "- Flutter"; \
     android_sdk_version=6514223; \
     android_sdk_out=androidsdk.zip; \
