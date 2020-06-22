@@ -47,11 +47,11 @@ RUN echo "- Flutter"; \
       "build-tools;30.0.0" \
       "system-images;android-26;default;x86" && \
     echo "no" | avdmanager create avd --name "android26" --package "system-images;android-26;default;x86"; \
-    \
     flutter_version=1.17.3; \
     flutter_out=flutter.txz; \
     wget -q https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_${flutter_version}-stable.tar.xz -O $flutter_out; \
-    tar -C /usr/local -xf $flutter_out;
+    tar -C /usr/local -xf $flutter_out; \
+    git clone https://github.com/dart-lang/dart-vim-plugin.git ~/.vim/pack/plugins/start/dart-vim-plugin;
 ENV ANDROID_HOME /usr/local/android
 ENV PATH /usr/local/flutter/bin:/usr/local/android/cmdline-tools/tools/bin:$PATH
 
