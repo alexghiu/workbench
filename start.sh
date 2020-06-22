@@ -8,6 +8,6 @@ docker container run --interactive --detach --privileged \
   --mount type=bind,source="$HOME/.Xauthority",target="/root/.Xauthority" \
   --mount type=bind,source="/dev/kvm",target="/dev/kvm" \
   \
-  --mount type=bind,source="$HOME/Work/learn",target="/learn" \
+  --mount type=bind,source="$PLAYGROUND",target="/playground" \
   \
   alexghiu/workbench:latest
