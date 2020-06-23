@@ -1,6 +1,6 @@
 FROM ubuntu:bionic
 WORKDIR /workbench
-RUN apt-get -qqy update && apt-get install -qqy wget git vim zip openjdk-8-jdk
+RUN apt-get -qqy update && apt-get install -qqy wget curl git vim zip openjdk-8-jdk
 COPY assets assets
 
 # Base16 for Shell and VIM
