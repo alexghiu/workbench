@@ -53,5 +53,5 @@ RUN echo "- Flutter"; \
     tar -C /usr/local -xf $flutter_out; \
     git clone https://github.com/dart-lang/dart-vim-plugin.git ~/.vim/pack/plugins/start/dart-vim-plugin;
 ENV ANDROID_HOME /usr/local/android
-ENV PATH /usr/local/flutter/bin:/usr/local/android/cmdline-tools/tools/bin:$PATH
+ENV PATH /usr/local/flutter/bin:/usr/local/android/cmdline-tools/tools/bin:/usr/local/android/platform-tools:$PATH
 
