@@ -55,3 +55,7 @@ RUN echo "- Flutter"; \
 ENV ANDROID_HOME /usr/local/android
 ENV PATH /usr/local/flutter/bin:/usr/local/android/cmdline-tools/tools/bin:/usr/local/android/platform-tools:$PATH
 
+RUN echo "- Flutter web"; \
+  flutter channel beta; \
+  flutter upgrade; \
+  flutter config --enable-web;
