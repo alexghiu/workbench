@@ -53,9 +53,12 @@ RUN echo "- Flutter"; \
     tar -C /usr/local -xf $flutter_out; \
     git clone https://github.com/dart-lang/dart-vim-plugin.git ~/.vim/pack/plugins/start/dart-vim-plugin;
 ENV ANDROID_HOME /usr/local/android
-ENV PATH /usr/local/flutter/bin:/usr/local/android/cmdline-tools/tools/bin:/usr/local/android/platform-tools:$PATH
+ENV PATH /usr/local/flutter/bin:/usr/local/android/cmdline-tools/tools/bin:/usr/local/android/platform-tools:/usr/local/flutter/.pub-cache/bin:$PATH
 
 RUN echo "- Flutter web"; \
   flutter channel beta; \
   flutter upgrade; \
   flutter config --enable-web;
+
+RUN echo "- Flutter DevTools"; \
+  flutter pub global activate devtools;
