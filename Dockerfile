@@ -22,7 +22,7 @@ RUN echo "- Base16"; \
 
 # Go
 RUN echo "- Go"; \
-    go_version=1.14.4; \
+    go_version=1.14.6; \
     go_os=linux; \
     go_arch=amd64; \
     go_out=go.tgz; \
@@ -39,7 +39,7 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 # To be able to correctly install the android-command-line-tools I used:
 # https://stackoverflow.com/questions/60440509/android-command-line-tools-sdkmanager-always-shows-warning-could-not-create-se
 RUN echo "- Android"; \
-    android_sdk_version=6514223; \
+    android_sdk_version=6609375; \
     android_sdk_out=androidsdk.zip; \
     wget -q https://dl.google.com/android/repository/commandlinetools-linux-${android_sdk_version}_latest.zip -O $android_sdk_out; \
     mkdir -p /usr/local/android; \
@@ -59,7 +59,7 @@ ENV PATH /usr/local/android/cmdline-tools/tools/bin:/usr/local/android/platform-
 
 # Flutter
 RUN echo "- Flutter"; \
-    flutter_version=1.17.3; \
+    flutter_version=1.17.5; \
     flutter_out=flutter.txz; \
     wget -q https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_${flutter_version}-stable.tar.xz -O $flutter_out; \
     tar -C /usr/local -xf $flutter_out; \
