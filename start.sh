@@ -9,5 +9,6 @@ docker container run --interactive --detach --privileged \
   --mount type=bind,source="/dev/kvm",target="/dev/kvm" \
   \
   --mount type=bind,source="$PLAYGROUND",target="/playground" \
+  --mount type=bind,source="$SAMPLES",target="/samples" \
   \
   alexghiu/workbench:latest
