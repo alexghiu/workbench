@@ -103,7 +103,7 @@ endif
 " Ruler
 "
 
-set colorcolumn=100
+set colorcolumn=80
 highlight ColorColumn ctermbg=DarkGray
 
 "
