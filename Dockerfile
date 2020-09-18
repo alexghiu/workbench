@@ -22,7 +22,7 @@ RUN echo "- Base16"; \
 
 # Go
 RUN echo "- Go"; \
-    go_version=1.14.6; \
+    go_version=1.15.2; \
     go_os=linux; \
     go_arch=amd64; \
     go_out=go.tgz; \
