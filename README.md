@@ -32,6 +32,14 @@ base16_apathy
 base16_zenburn
 ```
 
+vim-go
+
+
+```sh
+#Open vim and run
+:GoInstallBinaries
+```
+
 Flutter
 
 ```sh

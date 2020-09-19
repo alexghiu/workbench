@@ -5,6 +5,12 @@
 set nocompatible
 
 "
+" Plugins
+"
+
+filetype plugin indent on
+
+"
 " Leader
 "
 
