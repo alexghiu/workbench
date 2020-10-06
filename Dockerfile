@@ -7,19 +7,22 @@ RUN apt-get update && apt-get install -y \
     git \
     vim \
     zip \
-    openjdk-8-jdk
+    openjdk-8-jdk;
 COPY assets assets
 
-# Base16 for Shell and VIM
-RUN echo "- Base16"; \
-    cat assets/bashrc >> ~/.bashrc; \
+# Xresources
+RUN echo "- Xresources"; \
+  cat assets/xresources >> ~/.Xresources;
+
+# VIM Xcode colors
+RUN echo "- VIM Xcode"; \
     cp assets/vimrc ~/.vimrc; \
-    git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell; \
-    git clone git://github.com/chriskempson/base16-vim.git base16; \
-    mkdir -p ~/.vim/colors; \
-    cp base16/colors/*.vim ~/.vim/colors; \
-    rm -rf assets; \
-    rm -rf base16;
+    mkdir -p ~/.vim; \
+    git clone https://github.com/arzg/vim-colors-xcode.git; \
+    cp -r vim-colors-xcode/autoload ~/.vim; \
+    cp -r vim-colors-xcode/colors ~/.vim; \
+    cp -r vim-colors-xcode/doc ~/.vim; \
+    rm -rf vim-colors-xcode;
 
 # Go
 RUN echo "- Go"; \
@@ -30,10 +33,17 @@ RUN echo "- Go"; \
     wget -q https://dl.google.com/go/go${go_version}.${go_os}-${go_arch}.tar.gz -O $go_out; \
     tar -C /usr/local -xzf $go_out; \
     rm $go_out; \
-    git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
+    git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go;
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
+RUN go get github.com/go-delve/delve/cmd/dlv;
+
+# NodeJS
+RUN echo "- NodeJS"; \
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash; \
+    . ~/.bashrc; \
+    nvm install --lts;
 
 # Android
 #

@@ -1,0 +1,21 @@
+*xterm*background: #ffffff
+! normal text
+*xterm*foreground: #5c6873
+*xterm*cursorColor: #262626
+*xterm*color0: #b4d8fd
+*xterm*color1: #d12f1b
+*xterm*color2: #3e8087
+*xterm*color3: #78492a
+*xterm*color4: #0f68a0
+*xterm*color5: #ad3da4
+*xterm*color6: #804fb8
+*xterm*color7: #262626
+*xterm*color8: #8a99a6
+*xterm*color9: #d12f1b
+*xterm*color10: #23575c
+*xterm*color11: #78492a
+! folders
+*xterm*color13: #ad3da4
+! symlinks
+*xterm*color14: #ad3da4
+*xterm*color15: #262626
