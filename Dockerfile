@@ -63,8 +63,8 @@ RUN echo "- Android"; \
       "platform-tools" \
       "platforms;android-30" \
       "build-tools;30.0.0" \
-      "system-images;android-26;default;x86" && \
-    echo "no" | avdmanager create avd --name "android26" --package "system-images;android-26;default;x86";
+      "system-images;android-26;google_apis;x86" && \
+    echo "no" | avdmanager create avd --name "android26" --package "system-images;android-26;google_apis;x86";
 ENV ANDROID_HOME /usr/local/android
 ENV PATH /usr/local/android/cmdline-tools/tools/bin:/usr/local/android/platform-tools:$PATH
 
