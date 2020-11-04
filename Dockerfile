@@ -45,6 +45,17 @@ RUN echo "- NodeJS"; \
     . ~/.bashrc; \
     nvm install --lts;
 
+# Buffalo
+RUN echo "- Buffalo"; \
+  buffalo_version=0.16.16; \
+  buffalo_out=buffalo.tar.gz; \
+  wget https://github.com/gobuffalo/buffalo/releases/download/v${buffalo_version}/buffalo_${buffalo_version}_Linux_x86_64.tar.gz -O $buffalo_out; \
+  tar -xvzf $buffalo_out; \
+  mv buffalo /usr/local/bin/buffalo; \
+  rm $buffalo_out; \
+  rm README.md; \
+  rm LICENSE.txt;
+
 # Android
 #
 # To be able to correctly install the android-command-line-tools I used:
