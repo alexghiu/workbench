@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -y \
     openjdk-8-jdk;
 COPY assets assets
 
+# Fix colors
+ENV TERM=xterm-256color
+
 # Xresources
 RUN echo "- Xresources"; \
   cat assets/xresources >> ~/.Xresources;
