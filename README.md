@@ -10,61 +10,24 @@ Check out [Docker Hub](https://hub.docker.com/r/alexghiu/workbench) for availabl
 
 ## Usage
 
-General
-
 ```sh
-# Start container
-./start.sh
-
-# Get the container id
-docker container ls -a
-
-# Get container shell
-docker container exec -it [container-id] /bin/bash
-```
-
-To change the color scheme, type `base16` followed by TAB. This will display the available options:
-
-```sh
-base16_3024
-base16_apathy
-...
-base16_zenburn
-```
-
-vim-go
-
-
-```sh
-#Open vim and run
-:GoInstallBinaries
-```
-
-Flutter
-
-```sh
-# Check available emulators (android26):
-flutter emulators
-
-# Start the emulator:
-flutter emulators --launch android26
-
-# List devices (including emulator):
-flutter devices
-
-# Run the app in the emulator
-cd [app path in container]
-flutter run --enable-software-rendering
+docker container run
+  --interactive  \
+  --tty \
+  --name workbench \
+  \
+  --mount type=bind,source="$HOME/projects",target="/projects" \
+  \
+  alexghiu/workbench:latest
 ```
 
 ## Includes
 
-[Base16](https://github.com/chriskempson/base16)
-
-[Go](https://golang.org)
+[vim-colors-xcode](https://github.com/arzg/vim-colors-xcode)
 
 [vim-go](https://github.com/fatih/vim-go)
 
-[Flutter](https://flutter.dev)
+[dart-vim](https://github.com/dart-lang/dart-vim-plugin)
 
+[delve](github.com/go-delve/delve)
 
