@@ -30,6 +30,7 @@ RUN echo "- Go"; \
     git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go;
 RUN vim -esN +GoInstallBinaries +q
 RUN go get github.com/go-delve/delve/cmd/dlv;
+RUN go get golang.org/x/lint/golint;
 
 # Flutter
 RUN echo "- Flutter"; \
